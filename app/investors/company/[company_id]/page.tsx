@@ -1,10 +1,45 @@
 export default function Page({ params }: { params: { company_id: string } }) {
-    const companies = [
-      { kp: "ezes-1", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
-      { kp: "ezes-2", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
-      { kp: "ezes-3", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
-      { kp: "ezes-4", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png", objective: "Make choosing your shoes easy as EZE'S", team_size: 5, location: "Utrecht", status: "Prive", website_link:"http://ezes.nl", primary_partner: "Ezekiel Forko", founder_image:"/ezekielprofiel.jpeg", description:"Founded in 2023 by siblings Ezekiel and Bethany Forko, EZE’s is all about creating shoes that blend style and comfort. Driven by Ezekiel’s vision and Bethany’s design talent, we craft footwear that empowers you to step confidently into every adventure. EZE’s isn’t just about shoes—it’s about expressing individuality and embracing bold steps, one pair at a time." },
-    ];
+  const companies = [
+    {
+      kp: "ezes-1",
+      name: "EZE'S",
+      category: "Retail",
+      Established: "2024",
+      img: "/EZE'S.png",
+    },
+    {
+      kp: "ezes-2",
+      name: "EZE'S",
+      category: "Retail",
+      Established: "2024",
+      img: "/EZE'S.png",
+    },
+    {
+      kp: "ezes-3",
+      name: "EZE'S",
+      category: "Retail",
+      Established: "2024",
+      img: "/EZE'S.png",
+    },
+    {
+      kp: "ezes-4",
+      name: "EZE'S",
+      category: "Retail",
+      Established: "2024",
+      img: "/EZE'S.png",
+      objective: "Make choosing your shoes easy as EZE'S",
+      team_size: 5,
+      location: "Utrecht",
+      status: "Prive",
+      website_link: "http://ezes.nl",
+      primary_partner: "Ezekiel Forko",
+      founder_image: "/ezekielprofiel.jpeg",
+      description:
+        "Founded in 2023 by siblings Ezekiel and Bethany Forko, EZE’s is all about creating shoes that blend style and comfort. Driven by Ezekiel’s vision and Bethany’s design talent, we craft footwear that empowers you to step confidently into every adventure. EZE’s isn’t just about shoes—it’s about expressing individuality and embracing bold steps, one pair at a time.",
+      pills: ["Retail", "Fashion", "Utrecht", "Privately Held"],
+    },
+  ];
+
     
     const company = companies.find(c => c.kp === params.company_id)
   
