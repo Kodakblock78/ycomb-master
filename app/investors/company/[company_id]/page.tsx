@@ -6,6 +6,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
       category: "Retail",
       Established: "2024",
       img: "/EZE'S.png",
+      pills: ["Retail", "Fashion", "Utrecht", "Privately Held"],
     },
     {
       kp: "ezes-2",
@@ -13,6 +14,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
       category: "Retail",
       Established: "2024",
       img: "/EZE'S.png",
+      pills: ["Retail", "Fashion", "Utrecht", "Privately Held"],
     },
     {
       kp: "ezes-3",
@@ -20,6 +22,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
       category: "Retail",
       Established: "2024",
       img: "/EZE'S.png",
+      pills: ["Retail", "Fashion", "Utrecht", "Privately Held"],
     },
     {
       kp: "ezes-4",
@@ -88,37 +91,9 @@ export default function Page({ params }: { params: { company_id: string } }) {
                   <div className="text-xl">{company.objective}</div>
                 </div>
                 <div className="align-center flex flex-row flex-wrap gap-x-2 gap-y-2">
-                  <a href="/companies?batch=W09" target="_blank">
-                    <div className="yc-tw-Pill rounded-sm bg-[#E6E4DC] uppercase tracking-widest px-3 py-[3px] text-[12px] font-thin undefined flex flex-row items-center">
-                      <div className="flex flex-row items-center gap-[6px]">
-                        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" className="inline-block h-3 w-3 text-[#E36D34]" width="1.25em" height="1.25em">
-                          <title>Y Combinator Logo</title>
-                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g>
-                              <polygon fill="#F85F22" points="0 320 320 320 320 0 0 0"></polygon>
-                              <polygon fill="#FFFFFF" points="173 175.8652 173 247.0002 146 247.0002 146 175.8652 77.086 73.0002 110 73.0002 159.628 148.9972 209 73.0002 241.914 73.0002"></polygon>
-                            </g>
-                          </g>
-                        </svg>
-                        <span>W09</span>
-                      </div>
-                    </div>
-                  </a>
-                  <div className="yc-tw-Pill rounded-sm bg-[#E6E4DC] uppercase tracking-widest px-3 py-[3px] text-[12px] font-thin">
-                    <div className="flex flex-row items-center justify-between">
-                      <div className="mr-[6px] h-3 w-3 rounded-full bg-green-500"></div>
-                      <span>Public</span>
-                    </div>
-                  </div>
-                  <a href="/companies/industry/marketplace">
-                    <div className="yc-tw-Pill rounded-sm bg-[#E6E4DC] uppercase tracking-widest px-3 py-[3px] text-[12px] font-thin">marketplace</div>
-                  </a>
-                  <a href="/companies/industry/travel">
-                    <div className="yc-tw-Pill rounded-sm bg-[#E6E4DC] uppercase tracking-widest px-3 py-[3px] text-[12px] font-thin">travel</div>
-                  </a>
-                  <a href="/companies/location/san-francisco-bay-area">
-                    <div className="yc-tw-Pill rounded-sm bg-[#E6E4DC] uppercase tracking-widest px-3 py-[3px] text-[12px] font-thin">San Francisco</div>
-                  </a>
+                  {company.pills.map((pill, index) => (
+                    <p key={index} className="yc-tw-Pill rounded-sm bg-[#E6E4DC] uppercase tracking-widest px-3 py-[3px] text-[12px] font-thin">{pill}</p>
+                  ))}
                 </div>
               </div>
             </div>
@@ -134,9 +109,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                     <a href="/companies/airbnb/jobs" className="rounded-lg px-3 py-2 text-slate-700 no-underline hover:bg-[#EDEBE3]">Jobs</a>
                     <span className="ycdc-badge ml-0 px-1.5 font-bold no-underline">0</span>
                   </div>
-                  <div className="flex h-16 items-center">
-                    <a href="/companies/airbnb#news" className="rounded-lg px-3 py-2 text-slate-700 no-underline hover:bg-[#EDEBE3]">News</a>
-                  </div>
+
                 </nav>
                 <div className="image
                 
