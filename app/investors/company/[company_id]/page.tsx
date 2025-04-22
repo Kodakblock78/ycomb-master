@@ -3,22 +3,34 @@ export default function Page({ params }: { params: { company_id: string } }) {
       { kp: "ezes-1", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
       { kp: "ezes-2", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
       { kp: "ezes-3", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
-      { kp: "ezes-4", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
+      { kp: "ezes-4", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png", objective: "Make choosing your shoes easy as EZE'S", team_size: 5, location: "Utrecht", status: "Prive", website_link:"http://ezes.nl", primary_partner: "Ezekiel Forko", founder_image:"/ezekielprofiel.jpeg", description:"Founded in 2023 by siblings Ezekiel and Bethany Forko, EZE’s is all about creating shoes that blend style and comfort. Driven by Ezekiel’s vision and Bethany’s design talent, we craft footwear that empowers you to step confidently into every adventure. EZE’s isn’t just about shoes—it’s about expressing individuality and embracing bold steps, one pair at a time." },
     ];
-  
+    
     const company = companies.find(c => c.kp === params.company_id)
   
     if (!company) return <div>Company not found</div>
-  
+    
+    function buttonCreator(array: string[]) {
+      array.forEach((item) => {
+        const button = document.createElement("p");
+        button.innerText = item;
+        button.className = "yc-tw-Pill rounded-sm bg-[#E6E4DC] uppercase tracking-widest px-3 py-[3px] text-[12px] font-thin";
+        document.body.appendChild(button);
+      }
+    )
+    } 
+
+
         return (
-    <div className="mx-auto max-w-ycdc-page">
+          
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <section className="relative isolate z-0 border-retro-sectionBorder sm:pr-[13px] ycdcPlus:pr-0 pt-2 sm:pt-4 lg:pt-6 pb-2 sm:pb-4 lg:pb-6">
         <div className="shared-breadcrumb flex items-center pb-4">
           <a href="/home" className="shared-breadcrumb-text">Home</a>
           <span className="shared-breadcrumb-pipe">›</span>
           <a href="/companies" className="shared-breadcrumb-text">Companies</a>
           <span className="shared-breadcrumb-pipe">›</span>
-          <span className="shared-breadcrumb-text">Airbnb</span>
+          <span className="shared-breadcrumb-text">{company.name}</span>
         </div>
 
         <div className="flex flex-col gap-8 sm:flex-row">
@@ -26,7 +38,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
             <div className="mb-5 flex flex-row items-center gap-x-5">
               <div className="h-32 w-32 shrink-0 rounded-xl">
                 <img 
-                  src="companies/ezes-1.png"
+                  src={company.img}
                   alt="Airbnb logo"
                   width={128}
                   height={128}
@@ -35,10 +47,10 @@ export default function Page({ params }: { params: { company_id: string } }) {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-x-3">
-                  <h1 className="text-3xl font-bold">Airbnb</h1>
+                  <h1 className="text-3xl font-bold">{company.name}</h1>
                 </div>
                 <div className="prose hidden max-w-full md:block">
-                  <div className="text-xl">Book accommodations around the world.</div>
+                  <div className="text-xl">{company.objective}</div>
                 </div>
                 <div className="align-center flex flex-row flex-wrap gap-x-2 gap-y-2">
                   <a href="/companies?batch=W09" target="_blank">
@@ -48,7 +60,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                           <title>Y Combinator Logo</title>
                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                             <g>
-                              <polygon fill="#F05F22" points="0 320 320 320 320 0 0 0"></polygon>
+                              <polygon fill="#F85F22" points="0 320 320 320 320 0 0 0"></polygon>
                               <polygon fill="#FFFFFF" points="173 175.8652 173 247.0002 146 247.0002 146 175.8652 77.086 73.0002 110 73.0002 159.628 148.9972 209 73.0002 241.914 73.0002"></polygon>
                             </g>
                           </g>
@@ -97,7 +109,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                 
                 
                 flex flex-row items-center px-3 leading-none text-aColor">
-                  <a href="http://airbnb.com" target="_blank" className="mb-2 whitespace-nowrap md:mb-0">
+                  <a href={company.website_link} target="_blank" className="mb-2 whitespace-nowrap md:mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" width="1.25em" height="1.25em" className="-mt-px inline-block h-4 w-4 text-gray-600 image
                     
                     
@@ -111,7 +123,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                     
                     
                     
-                    -hover:underline ml-1">http://airbnb.com</span>
+                    -hover:underline ml-1">{company.website_link}</span>
                   </a>
                 </div>
               </div>
@@ -122,10 +134,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
               <div className="prose max-w-full">
                 <h3 className="sm:block md:hidden">Book accommodations around the world.</h3>
                 <div className="prose max-w-full whitespace-pre-line">
-                  Founded in August of 2008 and based in San Francisco, California, Airbnb is a trusted community marketplace for people to list, discover, and book unique accommodations around the world — online or from a mobile phone. Whether an apartment for a night, a castle for a week, or a villa for a month, Airbnb connects people to unique travel experiences, at any price point, in more than 33,000 cities and 192 countries. And with world-class customer service and a growing community of users, Airbnb is the easiest way for people to monetize their extra space and showcase it to an audience of millions.  
-
-                  No global movement springs from individuals. It takes an entire team united behind something big. Together, we work hard, we laugh a lot, we brainstorm nonstop, we use hundreds of Post-Its a week, and we give the best high-fives in town. Headquartered in San Francisco, we have satellite offices in Dublin, London, Barcelona, Paris, Milan, Copenhagen, Berlin, Moscow, São Paolo, Sydney, and Singapore.
-                </div>
+                  {company.description}</div>
               </div>
             </section>
 
@@ -146,16 +155,16 @@ export default function Page({ params }: { params: { company_id: string } }) {
                     flex gap-4">
                       <div className="aspect-square h-24 shrink-0 overflow-hidden rounded-xl">
                         <img 
-                          src="https://bookface-images.s3.us-west-2.amazonaws.com/avatars/43dd0e2c9396adccf8b4e456d806245942afc1ed.jpg" 
-                          alt="Nathan Blecharczyk"
+                          src={company.founder_image} 
+                          alt={company.primary_partner}
                           width={96}
                           height={96}
                           className="h-full w-full object-cover"
                         />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="text-xl font-bold">Nathan Blecharczyk</div>
-                        <div className="pt-1 text-[15px] text-gray-600">Founder/CTO</div>
+                        <div className="text-xl font-bold">{company.primary_partner}</div>
+                        <div className="pt-1 text-[15px] text-gray-600"></div>
                         <div className="mt-2 flex gap-2">
                           <a href="https://twitter.com/nathanblec" className="flex h-8 w-8 items-center justify-center rounded-md border border-[#EBEBEB] bg-white transition-colors duration-150 hover:bg-gray-50" target="_blank" rel="nofollow">
                             <img src="/images/social/x-logo.svg" alt="Twitter account" className="h-4 w-4" />
@@ -172,25 +181,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
               </div>
             </section>
 
-            <section className="relative isolate z-0 border-retro-sectionBorder sm:pr-[13px] ycdcPlus:pr-0 pt-2 sm:pt-4 lg:pt-6 pb-2 sm:pb-4 lg:pb-6" id="news">
-              <div>
-                <div className="prose mb-4">
-                  <div className="my-4 text-2xl font-bold text-[#333333] md:mt-0">Latest News</div>
-                </div>
-                <div>
-                  {/* News items would go here */}
-                  <div className="border-b py-2">
-                    <div className="ycdc-with-a-color mb-1 pr-4 leading-none">
-                      <a href="https://www.theverge.com/2023/5/9/23716903/airbnb-ceo-brian-chesky-rooms-ai-travel-future-of-work-summer-2023" className="prose font-medium" target="_blank">
-                        Airbnb CEO Brian Chesky on taking it back to basics: 'I can't make products just for 41-year-old tech founders' - The Verge
-                      </a>
-                    </div>
-                    <div className="text-sm">May 09, 2023</div>
-                  </div>
-                  {/* Repeat for other news items */}
-                </div>
-              </div>
-            </section>
+           
           </div>
 
           <div>
@@ -198,8 +189,8 @@ export default function Page({ params }: { params: { company_id: string } }) {
               <div className="mb-4 flex justify-center">
                 <a href="/companies/airbnb" className="block" target="_blank" rel="noopener noreferrer">
                   <img 
-                    src="https://bookface-images.s3.us-west-2.amazonaws.com/logos/0d179a13051b8806e0d2e3e8d6416fa6122e6ba0.png" 
-                    alt="Airbnb"
+                    src={company.img} 
+                    alt={company.name}
                     width={140}
                     height={140}
                     className="rounded-xl transition-opacity duration-150 hover:opacity-80 max-w-[120px] sm:max-w-[140px]"
@@ -208,21 +199,18 @@ export default function Page({ params }: { params: { company_id: string } }) {
               </div>
               <div className="space-y-1">
                 <div className="text-xl font-bold">
-                  <a href="/companies/airbnb" className="hover:text-aColor" target="_blank" rel="noopener noreferrer">Airbnb</a>
+                  <a href="/companies/airbnb" className="hover:text-aColor" target="_blank" rel="noopener noreferrer">{company.name}</a>
                 </div>
               </div>
               <div className="space-y-2 pt-4">
                 <div className="flex flex-row justify-between">
                   <span>Founded:</span>
-                  <span>2008</span>
+                  <span>{company.Established}</span>
                 </div>
+            
                 <div className="flex flex-row justify-between">
-                  <span>Batch:</span>
-                  <span className="whitespace-nowrap">W09</span>
-                </div>
-                <div className="flex flex-row justify-between">
-                  <span>Team Size:</span>
-                  <span>6132</span>
+                  <span>Team Size</span>
+                  <span>{company.team_size}</span>
                 </div>
                 <div className="flex flex-row justify-between">
                   <span>Status:</span>
@@ -233,14 +221,14 @@ export default function Page({ params }: { params: { company_id: string } }) {
                 </div>
                 <div className="flex flex-row justify-between">
                   <span>Location:</span>
-                  <span>San Francisco</span>
+                  <span>{company.location}</span>
                 </div>
                 <div className="flex flex-row justify-between">
                   <span>Primary Partner:</span>
-                  <a href="https://www.ycombinator.com/people/garry-tan" className="text-aColor" target="_blank" rel="noopener noreferrer">Garry Tan</a>
+                  <a href="https://www.ycombinator.com/people/garry-tan" className="text-aColor" target="_blank" rel="noopener noreferrer">{company.primary_partner}</a>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 pt-2">
-                  <a href="http://airbnb.com" className="flex h-9 w-9 items-center justify-center rounded-md border border-[#EBEBEB] bg-white transition-colors duration-150 hover:bg-gray-50" target="_blank" rel="nofollow noopener noreferrer">
+                  <a href={company.website_link} className="flex h-9 w-9 items-center justify-center rounded-md border border-[#EBEBEB] bg-white transition-colors duration-150 hover:bg-gray-50" target="_blank" rel="nofollow noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" width="1.25em" height="1.25em" className="-mt-px inline-block h-4 w-4 text-[#333]">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
                     </svg>
@@ -259,7 +247,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
             <div className="my-4 text-2xl font-bold text-[#333333] md:mt-0">YC Sign Photo</div>
           </h4>
           <img 
-            src="https://bookface-images.s3.us-west-2.amazonaws.com/attachments/8a7236c94b4d9b78b67ce66e02cbca497e632d99.png" 
+            src=""
             alt="Company photo"
             width={800}
             height={600}
