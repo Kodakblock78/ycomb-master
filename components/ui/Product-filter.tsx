@@ -106,7 +106,7 @@ const CompaniesPage = () => {
           {filteredCompanies.map((company, index) => (
             <a 
               key={index} 
-              href={`/company/${company.kp}`}
+              href={`investors/company/${company.kp}`}
               className="block bg-white p-4 rounded-lg shadow relative hover:shadow-lg transition-shadow"
             >
               <div className="absolute top-2 right-2">
