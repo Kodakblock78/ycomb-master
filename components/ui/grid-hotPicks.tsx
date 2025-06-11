@@ -6,6 +6,15 @@ interface Post {
   image: string;
   uploadTime: string;
   author: string;
+  image_url: string;
+  source: string;
+  relevance_score: any;
+  url?: string;
+  uuid?: string;
+  description?: string;
+  keywords?: string;
+  language?: any;
+  published_at?: string;
 }
 
 const posts: Post[] = [
@@ -30,6 +39,39 @@ const posts: Post[] = [
     uploadTime: "23/3/2025",
     author: "lorem",
   },
+  {
+            "uuid": "ed35bdcd-6f6a-4007-9949-b769fbe2e36d",
+            "title": "Amazon.com mulls new multi-billion dollar investment in Anthropic, the Information reports By Reuters",
+            "description": "Amazon.com mulls new multi-billion dollar investment in Anthropic, the Information reports",
+            "keywords": "",
+            "url": "https://www.investing.com/news/stock-market-news/amazoncom-mulls-new-multibillion-dollar-investment-in-anthropic-the-information-reports-3710319",
+            "image_url": "https://i-invdn-com.investing.com/news/amazon_800x533_L_1411373482.jpg",
+            "language": "en",
+            "published_at": "2024-11-07T23:49:09.000000Z",
+            "source": "investing.com",
+            "relevance_score": null,
+            "entities": [
+                {
+                    "symbol": "AMZN",
+                    "name": "Amazon.com, Inc.",
+                    "exchange": null,
+                    "exchange_long": null,
+                    "country": "us",
+                    "type": "equity",
+                    "industry": "Consumer Cyclical",
+                    "match_score": 34.292408,
+                    "sentiment_score": 0,
+                    "highlights": [
+                        {
+                            "highlight": "<em>Amazon.com</em> mulls new multi-billion dollar investment in Anthropic, the Information reports By Reuters",
+                            "sentiment": 0,
+                            "highlighted_in": "title"
+                        }
+                    ]
+                }
+            ],
+            "similar": []
+        }
 ];
 
 const PostGrid: React.FC = () => {

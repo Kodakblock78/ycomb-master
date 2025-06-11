@@ -117,7 +117,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/workspaces/ycomb/generated/prisma",
+      "value": "/workspaces/ycomb-master/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -131,12 +131,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/workspaces/ycomb/prisma/schema.prisma",
+    "sourceFilePath": "/workspaces/ycomb-master/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.6.0",
@@ -145,7 +144,7 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
-  "postinstall": false,
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {

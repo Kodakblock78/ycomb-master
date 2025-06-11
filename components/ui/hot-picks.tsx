@@ -1,5 +1,6 @@
 "use client";
 
+import InputFile from "@/components/ui/inputFile.tsx";
 import React, { useState } from "react";
 import { CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -22,7 +23,7 @@ const ClickableButtons = () => {
 
   return (
     <div className="flex gap-6 text-lg font-medium">
-      {["Editor's Picks", "Popular"].map((text, index) => (
+      {["Editors's picks", "Popular","market Sentiment"].map((text, index) => (
         <p
           key={index}
           className={`rounded-full px-6 py-3 border-2 border-black cursor-pointer transition 
@@ -41,12 +42,12 @@ const PicksPage = () => {
   const [date, setDate] = useState<Date | undefined>();
 
   return (
+    
     <div className="bg-grey-200 min-h-screen">
       <div className="flex flex-col items-center space-y-8 mt-[10vh]">
         <div className="text-7xl font-bold text-center">Explore our hot picks</div>
         <ClickableButtons />
       </div>
-
       {/* Popover Calendar & Dropdown (Side by Side, Aligned Properly) */}
       <div className="flex justify-end items-center gap-x-4 mt-20 mr-6">
         {/* Popover Calendar */}
@@ -58,11 +59,12 @@ const PicksPage = () => {
                 "w-[240px] pl-3 text-left font-normal",
                 !date && "text-muted-foreground"
               )}
-            >
+              >
               {date ? date.toDateString() : "Pick a date"}
               <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
             </Button>
           </PopoverTrigger>
+              <InputFile/>
           <PopoverContent className="w-auto p-0" align="end">
             <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
           </PopoverContent>
