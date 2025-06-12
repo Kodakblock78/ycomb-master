@@ -7,6 +7,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
       Established: "2024",
       img: "/EZE'S.png",
       pills: ["Retail", "Fashion", "Utrecht", "Privately Held"],
+      website_link: "https://ezes.nl"
     },
     {
       kp: "ezes-2",
@@ -60,8 +61,8 @@ export default function Page({ params }: { params: { company_id: string } }) {
 
 
         return (
-          
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className= "min-h-screen w-full bg-amber-300">
+          <div className="bg-amber-300 mx-auto py-20 max-w-7xl px-4 sm:px-6 lg:px-8">
       <section className="relative isolate z-0 border-retro-sectionBorder sm:pr-[13px] ycdcPlus:pr-0 pt-2 sm:pt-4 lg:pt-6 pb-2 sm:pb-4 lg:pb-6">
         <div className="shared-breadcrumb flex items-center pb-4">
           <a href="/home" className="shared-breadcrumb-text">Home</a>
@@ -81,7 +82,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                   width={128}
                   height={128}
                   className="h-full w-full rounded-xl"
-                />
+                  />
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-x-3">
@@ -117,7 +118,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                 
                 
                 flex flex-row items-center px-3 leading-none text-aColor">
-                  <a href={company.website_link} target="_blank" className="mb-2 whitespace-nowrap md:mb-0">
+                  <a href={company.website_link} target="_blank" className="mb-2 whitespace-nowrap md:mb-0 hover:text-blue-50 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" width="1.25em" height="1.25em" className="-mt-px inline-block h-4 w-4 text-gray-600 image
                     
                     
@@ -168,7 +169,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                           width={96}
                           height={96}
                           className="h-full w-full object-cover"
-                        />
+                          />
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="text-xl font-bold">{company.primary_partner}</div>
@@ -202,7 +203,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                     width={140}
                     height={140}
                     className="rounded-xl transition-opacity duration-150 hover:opacity-80 max-w-[120px] sm:max-w-[140px]"
-                  />
+                    />
                 </a>
               </div>
               <div className="space-y-1">
@@ -247,21 +248,24 @@ export default function Page({ params }: { params: { company_id: string } }) {
             </div>
           </div>
         </div>
+        
       </section>
+                    
 
       <section className="relative isolate z-0 border-retro-sectionBorder sm:pr-[13px] ycdcPlus:pr-0 pt-2 sm:pt-4 lg:pt-6 pb-2 sm:pb-4 lg:pb-6">
         <div className="prose">
           <h4>
-            <div className="my-4 text-2xl font-bold text-[#333333] md:mt-0">YC Sign Photo</div>
+            <div className="my-4 text-2xl font-bold text-[#333333] md:mt-0">Company Photo</div>
           </h4>
           <img 
             src=""
-            alt="Company photo"
+            alt={ `No company photo available for `}
             width={800}
             height={600}
           />
         </div>
       </section>
+    </div>
     </div>
   );
 };

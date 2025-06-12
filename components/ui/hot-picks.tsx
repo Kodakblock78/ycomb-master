@@ -49,7 +49,7 @@ const PicksPage = () => {
         <ClickableButtons />
       </div>
       {/* Popover Calendar & Dropdown (Side by Side, Aligned Properly) */}
-      <div className="flex justify-end items-center gap-x-4 mt-20 mr-6">
+      <div className="flex justify-center items-center gap-x-4 mt-20 mr-6">
         {/* Popover Calendar */}
         <Popover>
           <PopoverTrigger asChild>
