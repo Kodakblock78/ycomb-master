@@ -23,7 +23,7 @@ const ClickableButtons = () => {
 
   return (
     <div className="flex gap-6 text-lg font-medium">
-      {["Editors's picks", "Popular","market Sentiment"].map((text, index) => (
+      {["Editors's picks", "small cap",].map((text, index) => (
         <p
           key={index}
           className={`rounded-full px-6 py-3 border-2 border-black cursor-pointer transition 

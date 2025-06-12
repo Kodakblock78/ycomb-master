@@ -3,13 +3,11 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button2";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/Checkbox";
-import { X, Filter } from "lucide-react";
+import { X, Filter, ArrowUpDown } from "lucide-react";
 
-const companies = [
+export const companies = [
   { kp: "ezes-1", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
-  { kp: "ezes-2", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
-  { kp: "ezes-3", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
-  { kp: "ezes-4", name: "EZE'S", category: "Retail", Established: "2024", img: "/EZE'S.png" },
+  
 ];
 
 const categories = ["Tech", "Finance", "Health", "Education", "Entertainment", "Retail"];
@@ -18,6 +16,7 @@ const CompaniesPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [sortOrder, setSortOrder] = useState('desc'); // 'asc' or 'desc'
 
   const toggleCategory = (category) => {
     setSelectedCategories((prev) =>
@@ -27,11 +26,23 @@ const CompaniesPage = () => {
     );
   };
 
-  const filteredCompanies = companies.filter(
-    (company) =>
-      company.name.toLowerCase().includes(search.toLowerCase()) &&
-      (selectedCategories.length === 0 || selectedCategories.includes(company.category))
-  );
+  const handleSortClick = () => {
+    setSortOrder(current => current === 'asc' ? 'desc' : 'asc');
+  };
+
+  const filteredCompanies = companies
+    .filter(
+      (company) =>
+        company.name.toLowerCase().includes(search.toLowerCase()) &&
+        (selectedCategories.length === 0 || selectedCategories.includes(company.category))
+    )
+    .sort((a, b) => {
+      const yearA = parseInt(a.Established);
+      const yearB = parseInt(b.Established);
+      return sortOrder === 'asc' 
+        ? yearA - yearB 
+        : yearB - yearA;
+    });
 
   return (
     <div
@@ -55,6 +66,19 @@ const CompaniesPage = () => {
         <div className="flex justify-between items-center pb-4 border-b">
           <h2 className="text-xl font-bold">Filters</h2>
           <X className="cursor-pointer md:hidden" onClick={() => setSidebarOpen(false)} />
+        </div>
+
+        {/* Sort button */}
+        <div className="py-4 border-b">
+          <h3 className="text-lg mb-2">Sort</h3>
+          <Button
+            onClick={handleSortClick}
+            variant="outline"
+            className="w-full flex items-center justify-between"
+          >
+            <span>Established Date</span>
+            <ArrowUpDown className={`h-4 w-4 transform ${sortOrder === 'asc' ? 'rotate-180' : ''}`} />
+          </Button>
         </div>
 
         <div className="mt-5">
@@ -91,10 +115,18 @@ const CompaniesPage = () => {
 
           <div className="flex justify-end items-center p-6">
             <p className="text-white text-xl mr-4">sort by</p>
-            <select className="border-2 border-indigo-900 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option value="Default">Default</option>
-              <option value="Launch date">Launch date</option>
-            </select>
+            <div className="relative">
+              <select className="border-2 border-indigo-900 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="Default">Default</option>
+                <option value="Establishment">Establishment</option>
+              </select>
+              <button 
+                onClick={handleSortClick} 
+                className="absolute right-2 top-1/2 transform -translate-y-1/2"
+              >
+                <ArrowUpDown className={`w-5 h-5 ${sortOrder === 'asc' ? 'text-blue-500' : 'text-gray-400'}`} />
+              </button>
+            </div>
           </div>
 
           <Button className="md:hidden" onClick={() => setSidebarOpen(true)}>

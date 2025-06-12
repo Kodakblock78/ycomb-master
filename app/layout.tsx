@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./globals.css";
 import React from "react";
-
 // Font imports
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +18,8 @@ const geistMono = Geist_Mono({
 const Navbar = () => {
   const pathname = usePathname();
   const navItems = ["Home", "Investors", "Hot picks", "Startup Jobs", "About", "Contact"];
+
+  
   
   // Check if we're on the hot-picks page
   const isHotPicksPage = pathname?.startsWith("/hot-picks");
@@ -70,7 +71,7 @@ const FooterComp = () => {
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">WREH Productions</span>
           </a>
           <ul className="flex flex-wrap justify-center text-sm font-medium text-gray-300">
-            <li className="mx-4"><a href="#" className="hover:underline">Licensing</a></li>
+            <li className="mx-4"><a href="https://github.com/Kodakblock78/ycomb-master/blob/workingINhOMEPAGE/LICENSE" className="hover:underline">Licensing</a></li>
             <li className="mx-4"><a href="/contact" className="hover:underline">Contact</a></li>
             <li className="mx-4"><a href="/about" className="hover:underline">About</a></li>
           </ul>
