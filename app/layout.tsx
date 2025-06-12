@@ -70,11 +70,9 @@ const FooterComp = () => {
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">WREH Productions</span>
           </a>
           <ul className="flex flex-wrap justify-center text-sm font-medium text-gray-300">
-            <li className="mx-4"><a href="#" className="hover:underline">Privacy Policy</a></li>
             <li className="mx-4"><a href="#" className="hover:underline">Licensing</a></li>
-            <li className="mx-4"><a href="#" className="hover:underline">Contact</a></li>
-            <li className="mx-4"><a href="#" className="hover:underline">About</a></li>
-            <li className="mx-4"><a href="#" className="hover:underline">Pages</a></li>
+            <li className="mx-4"><a href="/contact" className="hover:underline">Contact</a></li>
+            <li className="mx-4"><a href="/about" className="hover:underline">About</a></li>
           </ul>
         </div>
         <hr className="my-6 border-gray-500 sm:mx-auto dark:border-gray-700 lg:my-8" />
