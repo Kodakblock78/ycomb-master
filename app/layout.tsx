@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./globals.css";
 import React from "react";
+import Image from "next/image";
 
 // Font imports
 const geistSans = Geist({
@@ -31,13 +32,15 @@ const Navbar = () => {
 }`}>
   <div className="max-w-7xl mx-auto flex justify-between items-center h-full"> {/* Add h-full here */}
     <div className="text-2xl font-bold flex items-center h-full"> {/* Ensure full height */}
-      <a href="/" >
-      <img
-  
-      src="https://flowbite.com/docs/images/logo.svg"
+      <Link href="/" >
+      <Image
+      src="/path/to/your/logo.svg"
       className="h-8 mr-3"
-      alt="Flowbite Logo" />
-      </a>
+      alt="Flowbite Logo"
+      width={32}
+      height={32}
+      />
+      </Link>
     </div>
     <ul className="flex space-x-6">
       {navItems.map((item, index) => (
@@ -66,7 +69,7 @@ const FooterComp = () => {
       <div className="w-full max-w-screen-xl mx-auto md:py-8 text-center">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-            <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
+            <Image src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" width={32} height={32} />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">WREH Productions</span>
           </a>
           <ul className="flex flex-wrap justify-center text-sm font-medium text-gray-300">

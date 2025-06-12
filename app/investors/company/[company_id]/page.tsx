@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Page({ params }: { params: { company_id: string } }) {
   const companies = [
     {
@@ -49,15 +51,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
   
     if (!company) return <div>Company not found</div>
     
-    function buttonCreator(array: string[]) {
-      array.forEach((item) => {
-        const button = document.createElement("p");
-        button.innerText = item;
-        button.className = "yc-tw-Pill rounded-sm bg-[#E6E4DC] uppercase tracking-widest px-3 py-[3px] text-[12px] font-thin";
-        document.body.appendChild(button);
-      }
-    )
-    } 
+
 
 
         return (
@@ -76,7 +70,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
           <div className="flex-grow">
             <div className="mb-5 flex flex-row items-center gap-x-5">
               <div className="h-32 w-32 shrink-0 rounded-xl">
-                <img 
+                <Image 
                   src={company.img}
                   alt="Airbnb logo"
                   width={128}
@@ -163,7 +157,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                     
                     flex gap-4">
                       <div className="aspect-square h-24 shrink-0 overflow-hidden rounded-xl">
-                        <img 
+                        <Image 
                           src={company.founder_image} 
                           alt={company.primary_partner}
                           width={96}
@@ -176,7 +170,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                         <div className="pt-1 text-[15px] text-gray-600"></div>
                         <div className="mt-2 flex gap-2">
                           <a href="https://twitter.com/nathanblec" className="flex h-8 w-8 items-center justify-center rounded-md border border-[#EBEBEB] bg-white transition-colors duration-150 hover:bg-gray-50" target="_blank" rel="nofollow">
-                            <img src="/images/social/x-logo.svg" alt="Twitter account" className="h-4 w-4" />
+                            <Image src="/images/social/x-logo.svg" alt="Twitter account" className="h-4 w-4" />
                           </a>
                           <a href="https://www.aedin.com/in/blecharczyk/" className="flex h-8 w-8 items-center justify-center rounded-md border border-[#EBEBEB] bg-white transition-colors duration-150 hover:bg-gray-50" target="_blank" rel="nofollow">
                             <div className="inline-block h-4 w-4 bg-contain bg-image-aedin">&nbsp;</div>
@@ -197,7 +191,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
             <div className="ycdc-card-new space-y-1.5 sm:w-[300px]">
               <div className="mb-4 flex justify-center">
                 <a href="/companies/airbnb" className="block" target="_blank" rel="noopener noreferrer">
-                  <img 
+                  <Image 
                     src={company.img} 
                     alt={company.name}
                     width={140}
@@ -257,7 +251,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
           <h4>
             <div className="my-4 text-2xl font-bold text-[#333333] md:mt-0">Company Photo</div>
           </h4>
-          <img 
+          <Image 
             src=""
             alt={ `No company photo available for `}
             width={800}
@@ -271,4 +265,3 @@ export default function Page({ params }: { params: { company_id: string } }) {
 };
 
 
-  

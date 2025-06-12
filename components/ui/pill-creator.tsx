@@ -16,4 +16,5 @@ type PillsProps = {
       </div>
     );
   };
-  
+
+  export default Pills;

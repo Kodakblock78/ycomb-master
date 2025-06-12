@@ -1,8 +1,9 @@
 import React from "react";
 
-interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-export const Checkbox: React.FC<CheckboxProps> = ({ className, ...props }) => {
+export const Checkbox: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = ({
+  className,
+  ...props
+}) => {
   return (
     <input
       type="checkbox"
