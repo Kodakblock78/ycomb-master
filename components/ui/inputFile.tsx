@@ -6,7 +6,7 @@ interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 export default function InputFile() {
   return (
     <div className="grid w-full max-w-sm items-center gap-3">
-      <Label htmlFor="company">search on company</Label>
+
       <Input type="email" id="email" placeholder="company name" />
     </div>
   )
