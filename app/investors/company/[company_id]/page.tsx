@@ -8,31 +8,6 @@ export default function Page({ params }: { params: { company_id: string } }) {
       category: "Retail",
       Established: "2024",
       img: "/EZE'S.png",
-      pills: ["Retail", "Fashion", "Utrecht", "Privately Held"],
-      website_link: "https://ezes.nl"
-    },
-    {
-      kp: "ezes-2",
-      name: "EZE'S",
-      category: "Retail",
-      Established: "2024",
-      img: "/EZE'S.png",
-      pills: ["Retail", "Fashion", "Utrecht", "Privately Held"],
-    },
-    {
-      kp: "ezes-3",
-      name: "EZE'S",
-      category: "Retail",
-      Established: "2024",
-      img: "/EZE'S.png",
-      pills: ["Retail", "Fashion", "Utrecht", "Privately Held"],
-    },
-    {
-      kp: "ezes-4",
-      name: "EZE'S",
-      category: "Retail",
-      Established: "2024",
-      img: "/EZE'S.png",
       objective: "Make choosing your shoes easy as EZE'S",
       team_size: 5,
       location: "Utrecht",
@@ -101,7 +76,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                     <a href="/companies/airbnb" className="rounded-lg px-3 py-2 text-slate-700 no-underline hover:bg-[#EDEBE3] font-bold">Company</a>
                   </div>
                   <div className="flex h-16 items-center">
-                    <a href="/companies/airbnb/jobs" className="rounded-lg px-3 py-2 text-slate-700 no-underline hover:bg-[#EDEBE3]">Jobs</a>
+                    <a href="/startup-jobs" className="rounded-lg px-3 py-2 text-slate-700 no-underline hover:bg-[#EDEBE3]">Jobs</a>
                     <span className="ycdc-badge ml-0 px-1.5 font-bold no-underline">0</span>
                   </div>
 
@@ -219,7 +194,7 @@ export default function Page({ params }: { params: { company_id: string } }) {
                   <span>Status:</span>
                   <span className="flex items-center">
                     <div className="mr-[6px] h-2 w-2 rounded-full bg-green-500"></div>
-                    Public
+                    {company.status}
                   </span>
                 </div>
                 <div className="flex flex-row justify-between">

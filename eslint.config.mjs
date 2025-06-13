@@ -10,10 +10,23 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Import Next.js + TypeScript presets
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+<<<<<<< HEAD
   {
     rules: {
       "@typescript-eslint/no-unused-vars": "off",
+=======
+
+  // Override or disable specific rules
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    rules: {
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@next/next/no-img-element": "off",
+
+>>>>>>> Fullappworkingwithoutissue
     },
   },
 ];
