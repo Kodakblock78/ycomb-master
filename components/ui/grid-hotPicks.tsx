@@ -17,15 +17,7 @@ interface Post {
 }
 
 const posts: Post[] = [
-  {
-    id: 1,
-    company: "Wreh productions",
-    image: "/images/mountain.jpg",
-    uploadTime: "06/3/2025",
-    author: "Thomas Wreh",
-    visibility: "private",
-    description: "Innovative video production company specializing in commercial and creative content.",
-  },
+  
   {
     id: 2,
     company: "EZE'S",
@@ -34,17 +26,7 @@ const posts: Post[] = [
     author: "Ezekiel Forko",
     visibility: "public",
     description: "Premium footwear brand focusing on style and comfort.",
-  },
-  {
-    id: 3,
-    company: "TechStart Solutions",
-    image: "/images/tech.jpg",
-    uploadTime: "06/10/2025",
-    author: "Sarah Chen",
-    visibility: "public",
-    description: "Technology consulting for startups and small businesses.",
-  },
-  // Add more example posts as needed
+  }
 ];
 
 const PostGrid: React.FC = () => {
