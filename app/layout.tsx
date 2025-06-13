@@ -32,13 +32,13 @@ const Navbar = () => {
 }`}>
   <div className="max-w-7xl mx-auto flex justify-between items-center h-full"> {/* Add h-full here */}
     <div className="text-2xl font-bold flex items-center h-full"> {/* Ensure full height */}
-      <a href="/" >
+      <Link href="/" >
       <img
   
       src="https://flowbite.com/docs/images/logo.svg"
       className="h-8 mr-3"
       alt="Flowbite Logo" />
-      </a>
+      </Link>
     </div>
     <ul className="flex space-x-6">
       {navItems.map((item, index) => (

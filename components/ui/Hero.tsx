@@ -31,7 +31,7 @@ const HeroSection = () => {
             Take over
           </h1>
           <p className="text-lg mb-8 max-w-lg mx-auto">
-            Start today and take control of your company's growth
+            Start today and take control of your company&apos;s growth
           </p>
         </div>
       </div>

@@ -32,13 +32,13 @@ const AboutPage = () => {
             empower individuals and organizations alike.
           </p>
           <p className="text-lg mb-4">
-            Whether it's through technology, education, or community engagement, we aim to inspire and drive
+            Whether it&apos;s through technology, education, or community engagement, we aim to inspire and drive
             progress in everything we do. Join us on our journey to bring meaningful change to the world.
           </p>
           <h2 className="text-3xl font-bold text-indigo-100 mb-4">Our Vision</h2>
           <p className="text-lg">
             We envision a future where creativity, technology, and collaboration come together to solve some of
-            the world's most pressing challenges. Through innovation and relentless dedication, we hope to
+            the world&apos;s most pressing challenges. Through innovation and relentless dedication, we hope to
             create a lasting impact that will benefit generations to come.
           </p>
         </div>
