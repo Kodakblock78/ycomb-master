@@ -32,7 +32,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center space-x-3">
   <span className="text-lg font-semibold">Deutronium</span>
   <img
-    src="https://flowbite.com/docs/images/logo.svg"
+    src="https://nl.linkedin.com/in/ezekiel-forko-0ba589330"
     className="h-8"
     alt="Flowbite Logo"
   />
@@ -82,12 +82,12 @@ const FooterComp = () => {
       <div className="w-full max-w-screen-xl mx-auto md:py-8 text-center">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
-            href="https://flowbite.com/"
+            href="https://nl.linkedin.com/in/ezekiel-forko-0ba589330"
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap">
-              WREH Productions
+              Deutronium
             </span>
           </a>
           <ul className={`flex flex-wrap justify-center text-sm font-medium ${

@@ -16,7 +16,7 @@ const Blogsection = () => {
     {
       title: "find that hidden gem",
       description:
-        "we have a wide range of companys who we publicize all you have to is pick ur poison.",
+        "we have a wide range of companys who we publicize all you have to do is pick your poison.",
       image: "/vite/assets/investor-network-DsrGWUIM.jpg",
     },
     
