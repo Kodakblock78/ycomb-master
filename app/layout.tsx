@@ -28,15 +28,15 @@ const Navbar = () => {
         : "bg-white bg-opacity-10 text-white"
     }`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
-        <div className="text-2xl font-bold flex items-center h-full  ">
-        <Link href="/" className="flex items-center space-x-3">
-  <span className="text-lg font-semibold">Deutronium</span>
-  <img
-    src="https://nl.linkedin.com/in/ezekiel-forko-0ba589330"
-    className="h-8"
-    alt="Flowbite Logo"
-  />
-</Link>
+        <div className="text-2xl font-bold flex items-center h-full">
+          <div className="flex items-center space-x-3">
+            <span className="text-lg font-semibold">Deutronium</span>
+            <img
+              src="/flowbite-logo.png"
+              className="h-8"
+              alt="Deutronium Logo"
+            />
+          </div>
         </div>
         <ul className="flex space-x-6">
           {navItems.map((item, index) => (
@@ -82,7 +82,7 @@ const FooterComp = () => {
       <div className="w-full max-w-screen-xl mx-auto md:py-8 text-center">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
-            href="https://nl.linkedin.com/in/ezekiel-forko-0ba589330"
+            href="/"
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />

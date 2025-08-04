@@ -14,8 +14,11 @@ const HeroSection = () => {
       <div className="relative z-10 w-full h-full flex">
         {/* Left side - Button with white box */}
         <div className="w-1/2 flex items-center justify-center px-4">
-          {/* White box around the button */}
-          <div className="w-80 h-[300px] bg-white rounded-lg flex items-center justify-center">
+          {/* Box with background image */}
+          <div
+            className="w-80 h-[300px] rounded-lg flex items-center justify-center bg-cover bg-center"
+            style={{ backgroundImage: "url('/israel-andrade-YI_9SivVt_s-unsplash.jpg')" }}
+          >
             <Link
               href="/about"
               className="px-4 py-2 bg-blue-700 text-white text-lg font-semibold rounded-lg hover:bg-blue-600 transition"
